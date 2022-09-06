@@ -27,6 +27,46 @@ namespace BaharBlog.Data.Concrete.EntityFrameWork.Mappings
             builder.Property(c=> c.IsDeleted).IsRequired(true);
            // builder.Property(c=>c.Note).Has
             builder.ToTable("Categories");
+            builder.HasData(
+                new Category
+                {
+                    Id = 1,
+                    Name = "C#",
+                    Description = "C# programlama dili ile ilgili bilgiler",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedByName = "InitialCreate",
+                    CreatedDate = DateTime.Now,
+                    ModifiedByName = "InitialCreate",
+                    ModifiedDate = DateTime.Now
+
+
+                },
+                new Category
+                {
+                    Id = 2,
+                    Name = "C++",
+                    Description = "C++ programlama dili ile ilgili bilgiler",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedByName = "InitialCreate",
+                    CreatedDate = DateTime.Now,
+                    ModifiedByName = "InitialCreate",
+                    ModifiedDate = DateTime.Now
+
+                },
+                new Category
+                {
+                    Id = 3,
+                    Name = "Javascript",
+                    Description = "JavaScript programlama dili ile ilgili bilgiler",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedByName = "InitialCreate",
+                    CreatedDate = DateTime.Now,
+                    ModifiedByName = "InitialCreate",
+                    ModifiedDate = DateTime.Now
+                });
 
 
         }

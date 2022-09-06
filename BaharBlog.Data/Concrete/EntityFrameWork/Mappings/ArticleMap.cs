@@ -35,11 +35,77 @@ namespace BaharBlog.Data.Concrete.EntityFrameWork.Mappings
             builder.Property(a=>a.CreatedDate).IsRequired(true);
             builder.Property(a=>a.IsActive).IsRequired(true);
             builder.Property(a=>a.IsDeleted).IsRequired(true);
+            //builder.Property(a => a.Note).HasMaxLength(500);
             builder.HasOne<Category>(a => a.Category).WithMany(c=>c.Articles).HasForeignKey(a=>a.CategoryId);//bire çok 
             //heer bir makalenin bir categorysi var ama her kategorinin birden çok makalesi olur
             //bir kategori olmalı => birden cok article olabilir bir categoride categoryID foreign 
             builder.ToTable("Articles");//tablonun adı
             builder.HasOne<User>(a => a.User).WithMany(u => u.Articles).HasForeignKey(a => a.UserId);
+            builder.HasData(
+                new Article
+                {
+                    Id = 1,
+                    CategoryId = 1,
+                    Title = "c# 9.0 .net 5 Yenilikleri",
+                    Content = "Lorem Ipsum , baskı ve dizgi endüstrisinin basit bir sahte metnidir. Lorem Ipsum, bilinmeyen bir matbaacının bir tip numune kitabı yapmak için bir yazı galerisini alıp karıştırdığı 1500'lerden beri endüstrinin standart sahte metni olmuştur. Sadece beş yüzyıl boyunca hayatta kalmayıp, aynı zamanda esasen değişmeden elektronik dizgiye sıçradı. 1960'larda Lorem Ipsum pasajları içeren Letraset sayfalarının yayınlanmasıyla ve daha yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümlerini içeren masaüstü yayıncılık yazılımlarıyla popüler hale geldi.",
+                    Thumbnail = "default.jpeg",
+                    SeoDescription = "c# 9.0 .net 5 Yenilikleri",
+                    SeoTags = "c#,.Net,.NetFramework",
+                    SeoAuthor = "Bahar Pehlivan",
+                    Date = DateTime.Now,
+                    IsActive = true,
+                    IsDeleted = false,
+                    ModifiedByName = "InitialCreate",
+                    UserId = 1,
+                    ModifiedDate = DateTime.Now,
+                    CreatedByName = "InitialCreate",
+                    CreatedDate = DateTime.Now,
+                    ViewsCount=100,
+                    CommentsCount=1
+
+                },
+                 new Article
+                 {
+                     Id = 2,
+                     CategoryId = 2,
+                     Title = "c++ 11.0 Yenilikleri",
+                     Content = "Lorem Ipsum , baskı ve dizgi endüstrisinin basit bir sahte metnidir. Lorem Ipsum, bilinmeyen bir matbaacının bir tip numune kitabı yapmak için bir yazı galerisini alıp karıştırdığı 1500'lerden beri endüstrinin standart sahte metni olmuştur. Sadece beş yüzyıl boyunca hayatta kalmayıp, aynı zamanda esasen değişmeden elektronik dizgiye sıçradı. 1960'larda Lorem Ipsum pasajları içeren Letraset sayfalarının yayınlanmasıyla ve daha yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümlerini içeren masaüstü yayıncılık yazılımlarıyla popüler hale geldi.",
+                     Thumbnail = "default.jpeg",
+                     SeoDescription = "c++ 11.0 Yenilikleri",
+                     SeoTags = "c++,.Net,.NetFramework",
+                     SeoAuthor = "Bahar Pehlivan",
+                     Date = DateTime.Now,
+                     IsActive = true,
+                     IsDeleted = false,
+                     ModifiedByName = "InitialCreate",
+                     UserId = 1,
+                     ModifiedDate = DateTime.Now,
+                     CreatedByName = "InitialCreate",
+                     CreatedDate = DateTime.Now,
+                     ViewsCount = 150,
+                     CommentsCount = 1
+                 },
+                  new Article
+                  {
+                      Id = 3,
+                      CategoryId = 3,
+                      Title = "Javascript s2019 Yenilikleri",
+                      Content = "Lorem Ipsum , baskı ve dizgi endüstrisinin basit bir sahte metnidir. Lorem Ipsum, bilinmeyen bir matbaacının bir tip numune kitabı yapmak için bir yazı galerisini alıp karıştırdığı 1500'lerden beri endüstrinin standart sahte metni olmuştur. Sadece beş yüzyıl boyunca hayatta kalmayıp, aynı zamanda esasen değişmeden elektronik dizgiye sıçradı. 1960'larda Lorem Ipsum pasajları içeren Letraset sayfalarının yayınlanmasıyla ve daha yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümlerini içeren masaüstü yayıncılık yazılımlarıyla popüler hale geldi.",
+                      Thumbnail = "default.jpeg",
+                      SeoDescription = "c# 9.0 .net 5 Yenilikleri",
+                      SeoTags = "javaScript,.Net,.NetFramework",
+                      SeoAuthor = "Bahar Pehlivan",
+                      Date = DateTime.Now,
+                      IsActive = true,
+                      IsDeleted = false,
+                      ModifiedByName = "InitialCreate",
+                      UserId = 1,
+                      ModifiedDate = DateTime.Now,
+                      CreatedByName = "InitialCreate",
+                      CreatedDate = DateTime.Now,
+                      ViewsCount = 10,
+                      CommentsCount = 1
+                  });
 
 
 

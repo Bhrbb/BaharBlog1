@@ -18,7 +18,7 @@ namespace BaharBlog.Entities.Concrete
         public string Picture { get; set; }
         public string Description { get; set; }
         public Role Role { get; set; }//role ile arasında bağlantı 
-        public virtual string Note { get; set; }
-       
+        public ICollection<Article> Articles { get; set; }
+
     }
 }

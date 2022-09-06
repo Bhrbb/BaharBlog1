@@ -27,6 +27,20 @@ namespace BaharBlog.Data.Concrete.EntityFrameWork.Mappings
             builder.Property(r => r.IsActive).IsRequired(true);
             builder.Property(r => r.IsDeleted).IsRequired(true);
             builder.ToTable("Roles");
+            //tam veri tabanı olusurken yaptıgımz için ilk verileri elle dolduruyoruz
+            builder.HasData(new Role
+            {
+                Id = 1,
+                Name = "Admin",
+                Description = "Admin bütün haklara sahiptir.",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "İnitialCreate",//veritabanı olusurken entityi veritabanı eklıyor
+                ModifiedByName ="İnitialCreate",
+                ModifiedDate = DateTime.Now,
+                CreatedDate = DateTime.Now
+
+            });
         }
     }
 }
